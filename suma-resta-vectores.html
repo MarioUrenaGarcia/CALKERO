@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Suma/Resta de Vectores</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Calculadora de Suma/Resta de Vectores</h1>
+        <div>
+            <h2>Vector A</h2>
+            <input type="number" id="vectorAX" placeholder="Componente x de A">
+            <input type="number" id="vectorAY" placeholder="Componente y de A">
+        </div>
+        <div>
+            <h2>Vector B</h2>
+            <input type="number" id="vectorBX" placeholder="Componente x de B">
+            <input type="number" id="vectorBY" placeholder="Componente y de B">
+        </div>
+        <div>
+            <button onclick="sumarVectores()">Sumar Vectores</button>
+            <button onclick="restarVectores()">Restar Vectores</button>
+        </div>
+        <div id="resultado">
+            <!-- Los resultados de la suma o resta se mostrarán aquí -->
+        </div>
+    </div>
+    <script src="scripts/suma-resta-vectores.js"></script>
+</body>
+</html>
