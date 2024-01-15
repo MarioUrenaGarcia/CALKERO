@@ -1,33 +1,38 @@
-function sumarVectores() {
-    var ax = parseFloat(document.getElementById('vectorAX').value);
-    var ay = parseFloat(document.getElementById('vectorAY').value);
-    var bx = parseFloat(document.getElementById('vectorBX').value);
-    var by = parseFloat(document.getElementById('vectorBY').value);
 
-    var resultadoX = ax + bx;
-    var resultadoY = ay + by;
-
-    mostrarResultado(resultadoX, resultadoY, 'suma');
+function obtenerComponentes(magnitud, angulo) {
+    let radianes = angulo * Math.PI / 180; // Conversión de grados a radianes
+    let x = magnitud * Math.cos(radianes);
+    let y = magnitud * Math.sin(radianes);
+    return { x, y };
 }
 
-function restarVectores() {
-    var ax = parseFloat(document.getElementById('vectorAX').value);
-    var ay = parseFloat(document.getElementById('vectorAY').value);
-    var bx = parseFloat(document.getElementById('vectorBX').value);
-    var by = parseFloat(document.getElementById('vectorBY').value);
+function operarVectores(operacion) {
+    let vectorAMagnitud = parseFloat(document.getElementById('vectorAMagnitude').value);
+    let vectorAAngulo = parseFloat(document.getElementById('vectorAAngle').value);
+    let vectorBMagnitud = parseFloat(document.getElementById('vectorBMagnitude').value);
+    let vectorBAngulo = parseFloat(document.getElementById('vectorBAngle').value);
 
-    var resultadoX = ax - bx;
-    var resultadoY = ay - by;
+    let vectorA = obtenerComponentes(vectorAMagnitud, vectorAAngulo);
+    let vectorB = obtenerComponentes(vectorBMagnitud, vectorBAngulo);
 
-    mostrarResultado(resultadoX, resultadoY, 'resta');
+    let resultadoX, resultadoY;
+
+    if (operacion === 'sumar') {
+        resultadoX = vectorA.x + vectorB.x;
+        resultadoY = vectorA.y + vectorB.y;
+    } else if (operacion === 'restar') {
+        resultadoX = vectorA.x - vectorB.x;
+        resultadoY = vectorA.y - vectorB.y;
+    }
+
+    mostrarResultado(resultadoX, resultadoY);
 }
 
-function mostrarResultado(x, y, operacion) {
-    var resultadoDiv = document.getElementById('resultado');
-    resultadoDiv.innerHTML = `<h2>Resultado de la ${operacion}:</h2><p>Componente x: ${x.toFixed(2)}, Componente y: ${y.toFixed(2)}</p>`;
+function mostrarResultado(x, y) {
+    let resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = `<h2>Resultado:</h2><p>Componente x: ${x.toFixed(2)}, Componente y: ${y.toFixed(2)}</p>`;
 }
 
-// Manejador de eventos para cargar el script después de que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-    // Puedes agregar manejadores de eventos para los botones si prefieres no usar el atributo 'onclick' en el HTML
+    // Event listeners para botones pueden ser agregados aquí si se desea.
 });
