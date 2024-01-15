@@ -1,0 +1,90 @@
+/* Estilos comunes para toda la página de calculadoras */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+#container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+color: #333;
+text-align: center;
+margin-bottom: 20px;
+}
+
+nav ul {
+list-style-type: none;
+padding: 0;
+text-align: center;
+}
+
+nav ul li {
+display: inline;
+margin: 0 10px;
+}
+
+nav ul li a {
+text-decoration: none;
+color: #0056b3;
+font-size: 18px;
+}
+
+nav ul li a:hover {
+text-decoration: underline;
+}
+
+input[type="number"] {
+width: calc(100% - 22px);
+padding: 10px;
+margin: 10px 0;
+border: 1px solid #ddd;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+button {
+width: 100%;
+padding: 10px;
+margin-top: 10px;
+background-color: #0056b3;
+border: none;
+border-radius: 4px;
+color: white;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button:hover {
+background-color: #003d82;
+}
+
+#result {
+margin-top: 20px;
+padding: 10px;
+background: #e7e7e7;
+border-radius: 4px;
+}
+
+a {
+display: block;
+margin-top: 20px;
+text-align: center;
+color: #0056b3;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+
